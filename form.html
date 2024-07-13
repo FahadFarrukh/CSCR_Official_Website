@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   
+    <title>Login- CSCR DSU</title>
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+
+
+    <style>
+
+        
+.services .services-item {
+    box-shadow: 0 0 60px rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px 0;
+    position: relative;
+    background-color: #800000; /* Maroon background */
+    color: #FFFFFF; /* White text */
+}
+
+.services-content::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 0 0;
+    background: #800000; /* Maroon background */
+    transition: .5s;
+}
+
+.services-content::after {
+    top: 0;
+    bottom: auto;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.services-item:hover .services-content::after {
+    height: 100%;
+    opacity: 1;
+    transition: .5s;
+}
+
+.services-item:hover .services-content-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.services-item .services-content-icon i,
+.services-item .services-content-icon p {
+    transition: .5s;
+}
+
+.services-item:hover .services-content-icon i {
+    color: #800000; /* Maroon icons */
+}
+
+.services-item:hover .services-content-icon p {
+    color: #FFFFFF; /* White text */
+}
+
+/* Additional styles for buttons and other elements, if needed */
+.btn-primary, .carousel-content-btn1, .carousel-content-btn2 {
+    background-color: #800000; /* Maroon buttons */
+    border-color: #800000;
+    color: #FFFFFF; /* White text */
+}
+
+.btn-primary:hover, .carousel-content-btn1:hover, .carousel-content-btn2:hover {
+    background-color: #600000; /* Darker shade of maroon for hover */
+    border-color: #600000;
+}
+
+/* Specific to the 'Fact Start' section */
+.container-fluid.bg-secondary.py-5 {
+    background-color: #800000;
+}
+
+/* gpt additional style */
+.services .services-item {
+    box-shadow: 0 0 60px rgba(0, 0, 0, .2);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 10px 0;
+    position: relative;
+}
+
+
+.services-content::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-radius: 10px 10px 0 0;
+    background: maroon;
+    transition: .5s;
+}
+
+.services-content::after {
+    top: 0;
+    bottom: auto;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.services-item:hover .services-content::after {
+    height: 100%;
+    opacity: 1;
+    transition: .5s;
+}
+
+.services-item:hover .services-content-icon {
+    position: relative;
+    z-index: 2;
+}
+
+.services-item .services-content-icon i,
+.services-item .services-content-icon p {
+    transition: .5s;
+}
+
+.services-item:hover .services-content-icon i {
+    color: var(--bs-secondary) !important;
+}
+
+.services-item:hover .services-content-icon p {
+    color: var(--bs-white);
+}
+/* ... (your existing styles) ... */
+
+.services-content-icon a.btn {
+    background-color: maroon;
+    color: #fff;
+}
+
+.services-inner h1,
+.services-inner h5 {
+    color: #fff;
+}
+
+/* ... (your existing styles) ... */
+
+.services-content-icon i {
+    color: maroon !important;
+}
+
+.services-inner h1,
+.services-inner h5 {
+    color: maroon;
+}
+
+.btn-secondary {
+    background-color: #800000; /* Maroon background */
+    border-color: #800000; /* Maroon border */
+    color: #FFFFFF; /* White text */
+}
+
+.btn-secondary:hover {
+    background-color: #600000; /* Darker shade of maroon for hover */
+    border-color: #600000;
+}
+.bg-primary {
+    background-color: #800000; /* Maroon background */
+}
+.blog .bg-primary {
+    background-color: #800000; /* Maroon background */
+}
+.blog h1, .blog h5, .blog p, .blog a {
+    color: #FFFFFF; /* White text */
+}
+
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: rgb(120, 0, 0);
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+/* LOGO */
+.logo {
+  font-size: 26px;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color: #560000;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+/* DROPDOWN MENU */
+.services {
+  position: relative; 
+}
+
+.dropdown {
+  background-color: rgb(1, 139, 139);
+  padding: 1em 0;
+  position: absolute; /*WITH RESPECT TO PARENT*/
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+}
+
+.dropdown li + li {
+  margin-top: 10px;
+}
+
+.dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+}
+
+.dropdown li:hover {
+  background-color: #4c9e9e;
+}
+
+.services:hover .dropdown {
+  display: block;
+}
+
+/* RESPONSIVE NAVBAR MENU STARTS */
+
+/* CHECKBOX HACK */
+
+input[type=checkbox] {
+  display: none;
+} 
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+ .menu {
+    display:none;
+    position: absolute;
+    background-color: rgb(120, 0, 0);
+    right: 0;
+    left: 0;
+    margin-top: 20px;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color:#560000;
+    transition: 0.3s ease;  
+  }
+
+  .menu li + li {
+    margin-top: 12px;
+  }
+
+  input[type=checkbox]:checked ~ .menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: #4c9e9e;
+  }
+}
+.input1 {
+    border: solid 3px grey;
+    border-radius: 12px; /* You can adjust the value to control the roundness of the corners */
+    background-color: grey; /* Set the background color to match the border color */
+}
+.txt{
+    font-size: 24px;
+    margin-bottom: 3px;
+    font-weight: 600;
+    color: #a70000;
+}
+.bttn{
+    background-color: rgb(225, 225, 225);
+}
+.logbtn{
+    background-color: rgb(225, 225, 225);
+}
+@media (max-width: 1168px) {
+    h2{
+  font-size: 28px;
+}
+.logo{
+    font-size: 20px;
+}
+}
+@media (min-width: 1168px) {
+    h2{
+  font-size: 48px;
+}
+}
+    </style>
+
+</head>
+<body>
+
+
+    <nav style="z-index: 999;" class="navbar">
+        <!-- LOGO -->
+        <div style="display: flex;align-items: center;z-index: 999;" class="logo"><div  ><img style="height: 90px;width: 90px;" src="images/logo2.png" alt=""></div><h1 style="font-weight: 700;font-size: 26;color: #ffffff;">DHA Suffa University</h1> </div>
+    
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
+    
+          <!-- USING CHECKBOX HACK -->
+          <input style="z-index: 999;" type="checkbox" id="checkbox_toggle" />
+          <label style="z-index: 999;" for="checkbox_toggle" class="hamburger">&#9776;</label>
+    
+          <!-- NAVIGATION MENUS -->
+          <div style="z-index: 999;" class="menu">
+    
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="job.html">Job Portal</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li style="background-color: rgb(207, 207, 207);border-radius: 10px;color: #790000;"><a style="color: #890000;font-weight: 600;" href="form.html">Login →</a></li>
+           
+          </div>
+        </ul>
+      </nav>
+
+    
+      <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+         <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+           <div style="background-color:  rgb(131, 0, 0);"
+             class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-sky-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
+           </div>
+           <div class="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
+       
+             <div class="max-w-md mx-auto">
+               <h3 class="text-xl font-light">Please Login with your DSU credentials</h3>
+               <br>
+               <div>
+                 <h1 class="text-2xl font-semibold">Login</h1>
+               </div>
+               <div class="divide-y divide-gray-200">
+                 <div class="py-8 text-base leading-6 space-y-4 text-gray-700 sm:text-lg sm:leading-7">
+                   <div class="relative">
+                     <input autocomplete="off" id="email" name="email" type="text" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address" />
+                     <label for="email" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
+                   </div>
+                   <div class="relative">
+                     <input autocomplete="off" id="password" name="password" type="password" class="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
+                     <label for="password" class="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
+                   </div>
+                   <div class="relative">
+                     <a href="job.html"> <button style="background-color:  rgb(131, 0, 0);" class="bg-cyan-500 text-white rounded-md px-2 py-1">Submit</button></a>
+                   </div>
+                 </div>
+               </div>
+             </div>
+       
+           </div>
+         </div>
+       </div>
+       <footer style="background-color: rgb(131, 0, 0);color: white;" class=" body-font">
+        <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+          <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+            <a class="flex title-font font-medium items-center md:justify-start justify-center ">
+              <img style="height:50px ; width:50px ;" src="images/favicon.jpg" alt="">
+              <span class="ml-3 text-xl">DHA Suffa University</span>
+            </a>
+            <p class="mt-2 text-sm ">Career Services and Corporate Relations Office</p>
+          </div>
+          <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium  tracking-widest text-sm mb-3 text-gray-200">Resources</h2>
+                <li>
+                  <a href="resources/dsu-2018-internship-application-form.pdf" class="hover:text-gray-800">Internship application form</a>
+                </li>
+                <li>
+                  <a href="resources/Internship-Report-Draft.docx" class="hover:text-gray-800">Internship Report Draft</a>
+                </li>
+                <li>
+                  <a href="resources/Student-Evaluation-Regarding-Internship.pdf" class="hover:text-gray-800">Student Evaluation</a>
+                </li>
+                <li>
+                  <a href="resources/Supervisor-Evaluation-form.docx" class="hover:text-gray-800">Supervisor Evaluation</a>
+                </li>
+                <li>
+                  <a href="resources/Template-CV.doc" class="hover:text-gray-800">CV Template <a href="https://www.example.com" class="hover:text-gray-800">First Link</a></a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium  tracking-widest text-sm mb-3"></h2>
+              <nav class="list-none mb-10 mt-10">
+                <li>
+                  <a href="index.html" class="hover:text-gray-800">Home</a>
+                </li>
+                <li>
+                  <a href="about.html" class="hover:text-gray-800">About Us</a>
+                </li>
+                <li>
+                  <a href="services.html" class="hover:text-gray-800">Services</a>
+                </li>
+                <li>
+                  <a href="resources.html" class="hover:text-gray-800">Resources</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium  tracking-widest text-sm mb-3"></h2>
+              <nav class="list-none mb-10 mt-10">
+                <li>
+                  <a href="contact.html" class="hover:text-gray-800">Contact Us</a>
+                </li>
+                <li>
+                  <a href="form.html" class="hover:text-gray-800">Login</a>
+                </li>
+                <li>
+                  <a href="job.html" class="hover:text-gray-800">Job Portal</a>
+                </li>
+              </nav>
+            </div>
+            <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+              <h2 class="title-font font-medium tracking-widest text-sm mb-3 text-gray-200">Get in touch with us</h2>
+              <nav class="list-none mb-10">
+                  <li>
+                      <i class="fas fa-map-marker-alt"></i>
+                      <a href="#map-location" class="hover:text-gray-800">DHA Suffa University, DHA Phase 7 Ext, Karachi</a>
+                  </li>
+                  <li>
+                      <i class="fas fa-phone"></i>
+                      <a href="tel:+1234567890" class="hover:text-gray-800">(021)35244851 Ext:180</a>
+                  </li>
+                  <li>
+                      <i class="fas fa-envelope"></i>
+                      <a href="mailto:info@example.com" class="hover:text-gray-800">cscr@dsu.edu.pk</a>
+                  </li>
+              </nav>
+          </div>
+          
+          </div>
+        </div>
+        <div style="background-color: rgb(53, 0, 0);color: white;">
+          <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+            <p class=" text-sm text-center sm:text-left">© Copyright - DHA Suffa University -
+              <a  rel="noopener noreferrer" class=" ml-1" target="_blank">Website by Fahad-Ibtisam-Ibad</a>
+            </p>
+            <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+            </span>
+          </div>
+        </div>
+      </footer>
+   </body>
+</html>

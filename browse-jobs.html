@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Browse Jobs- CSCR DSU</title>
+    <link rel="shortcut icon" href="images/favicon.jpg" type="image/x-icon">
+
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css_job/font-awesome.css">
+
+    <!-- Libraries Stylesheet -->
+    <link href="./lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="./bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link rel="stylesheet" href="css_job/style.css">
+<link rel="stylesheet" href="css/colors/red.css" id="colors">
+    <style>
+
+        .scroll-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #790000; 
+            color: #fff;
+            padding-top: 8px;
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 8px;
+            
+            display: none;
+            border: none;
+            border-radius: 4px;
+           
+        }
+        
+        /* Style for the arrow icon */
+        .scroll-to-top::before {
+            content: "\2191"; /* Unicode arrow-up character */
+            font-size: 20px;
+        }
+        #abc{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .divider {
+            width: 95%;
+            margin: 20px auto;
+            height: 4px;
+            background: linear-gradient(to right, transparent, #6c0000, transparent);
+        }
+        
+        /* NAVBAR STYLING STARTS */
+        .navbar {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 20px;
+          background-color: rgb(120, 0, 0);
+          color: #fff;
+        }
+        
+        .nav-links a {
+          color: #fff;
+        }
+        
+        /* LOGO */
+        .logo {
+          font-size: 26px;
+          color: #ffffff;
+        }
+        
+        /* NAVBAR MENU */
+        .menu {
+          display: flex;
+          gap: 1em;
+          font-size: 18px;
+        }
+        
+        .menu li:hover {
+          background-color: #560000;
+          border-radius: 5px;
+          transition: 0.3s ease;
+        }
+        
+        .menu li {
+          padding: 5px 14px;
+        }
+        
+        /* DROPDOWN MENU */
+        .services {
+          position: relative; 
+        }
+        
+        .dropdown {
+          background-color: rgb(1, 139, 139);
+          padding: 1em 0;
+          position: absolute; /*WITH RESPECT TO PARENT*/
+          display: none;
+          border-radius: 8px;
+          top: 35px;
+        }
+        
+        .dropdown li + li {
+          margin-top: 10px;
+        }
+        
+        .dropdown li {
+          padding: 0.5em 1em;
+          width: 8em;
+          text-align: center;
+        }
+        
+        .dropdown li:hover {
+          background-color: #4c9e9e;
+        }
+        
+        .services:hover .dropdown {
+          display: block;
+        }
+        
+        /* RESPONSIVE NAVBAR MENU STARTS */
+        
+        /* CHECKBOX HACK */
+        
+        input[type=checkbox] {
+          display: none;
+        } 
+        
+        /* HAMBURGER MENU */
+        .hamburger {
+          display: none;
+          font-size: 24px;
+          user-select: none;
+        }
+        
+        /* APPLYING MEDIA QUERIES */
+        @media (max-width: 768px) {
+         .menu {
+            display:none;
+            position: absolute;
+            background-color: rgb(120, 0, 0);
+            right: 0;
+            left: 0;
+            margin-top: 20px;
+            text-align: center;
+            padding: 16px 0;
+          }
+        
+          .menu li:hover {
+            display: inline-block;
+            background-color:#560000;
+            transition: 0.3s ease;  
+          }
+        
+          .menu li + li {
+            margin-top: 12px;
+          }
+        
+          input[type=checkbox]:checked ~ .menu {
+            display: block;
+          }
+        
+          .hamburger {
+            display: block;
+          }
+        
+          .dropdown {
+            left: 50%;
+            top: 30px;
+            transform: translateX(35%);
+          }
+        
+          .dropdown li:hover {
+            background-color: #4c9e9e;
+          }
+        }
+        .btn-secondary {
+            background-color: #800000; /* Maroon background */
+            border-color: #a10000; /* Maroon border */
+            color: #FFFFFF; /* White text */
+        }
+        @media (max-width: 1168px) {
+        
+        .logo{
+          font-size: 20px;
+        }
+        
+        
+        }
+            </style>
+        </head>
+        <body>
+          <nav style="z-index: 999;" class="navbar">
+            <!-- LOGO -->
+            <div style="display: flex;align-items: center;z-index: 999;" class="logo"><div  ><img style="height: 90px;width: 90px;" src="images/logo2.png" alt=""></div><h1 style="font-weight: 700;font-size: 26;color: #ffffff;">DHA Suffa University</h1> </div>
+        
+            <!-- NAVIGATION MENU -->
+            <ul class="nav-links">
+        
+              <!-- USING CHECKBOX HACK -->
+              <input style="z-index: 999;" type="checkbox" id="checkbox_toggle" />
+              <label style="z-index: 999;" for="checkbox_toggle" class="hamburger">&#9776;</label>
+        
+              <!-- NAVIGATION MENUS -->
+              <div style="z-index: 999;" class="menu">
+        
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="job.html">Job Portal</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+				<li style="background-color: rgb(207, 207, 207);border-radius: 10px;color: #790000;"><a style="color: #890000;font-weight: 600;" href="form.html">Login →</a></li>
+               
+              </div>
+            </ul>
+          </nav>
+<div class="clearfix"></div>
+
+
+
+<!-- Titlebar
+================================================== -->
+<div id="titlebar">
+	<div class="container">
+		<div class="ten columns">
+			<span><a href="job.html">Go Back</a></span>
+			<h2>More Jobs</h2>
+		</div>
+
+	</div>
+</div>
+
+
+<!-- Content
+================================================== -->
+<div class="container">
+	<!-- Recent Jobs -->
+	<div class="eleven columns">
+	<div class="padding-right">
+
+		<ul class="job-list full">
+
+			<li><a href="job-page.html">
+				<img src="images_job/job-list-logo-01.png" alt="">
+				<div class="job-list-content">
+					<h4>Marketing Coordinator - SEO / SEM Experience</h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i> King</span>
+						<span><i class="fa fa-map-marker"></i> Sydney</span>
+						<span><i class="fa fa-money"></i> $100 / hour</span>
+					</div>
+					<p>The SEO/SEM Specialist will work with industry leaders and top retailers to define and deliver best practices through innovative SEO methodologies.</p>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="job-page.html">
+				<img src="images_job/job-list-logo-02.png" alt="">
+				<div class="job-list-content">
+					<h4>Core PHP Developer for Site Maintenance</h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i> Cubico</span>
+						<span><i class="fa fa-map-marker"></i> London</span>
+						<span><i class="fa fa-money"></i> $50 / hour</span>
+					</div>
+					<p>Vivamus eleifend metus elit. Aenean facilisis placerat faucibus. Praesent commodo at mi nec imperdiet. Etiam at libero nec nunc iaculis ullamcorper.</p>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="job-page-alt.html">
+				<img src="images_job/job-list-logo-03.png" alt="">
+				<div class="job-list-content">
+					<h4>Restaurant Team Member - Crew</h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i> King</span>
+						<span><i class="fa fa-map-marker"></i> Sydney</span>
+						<span><i class="fa fa-money"></i> $15 / hour</span>
+					</div>
+					<p>Duis eu sem erat. Aliquam vestibulum justo at quam facilisis, sit amet condimentum dui laoreet. Nunc feugiat ante quis pulvinar ornare. In tempus lorem ipsum.</p>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="job-page.html">
+				<img src="images_job/job-list-logo-04.png" alt="">
+				<div class="job-list-content">
+					<h4>Power Systems User Experience Designer</h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i> Hexagon</span>
+						<span><i class="fa fa-map-marker"></i> London</span>
+						<span><i class="fa fa-money"></i> $75 / hour</span>
+					</div>
+					<p>Praesent eu imperdiet quam. Fusce posuere venenatis lorem vel lacinia. Integer orci magna, accumsan nec velit quis, porttitor pulvinar nulla. Nullam viverra risus massa.</p>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+
+			<li><a href="job-page-alt.html">
+				<img src="images_job/job-list-logo-05.png" alt="">
+				<div class="job-list-content">
+					<h4>iPhone / Android Music App Development</h4>
+					<div class="job-icons">
+						<span><i class="fa fa-briefcase"></i> Mates</span>
+						<span><i class="fa fa-map-marker"></i> New York</span>
+						<span><i class="fa fa-money"></i> $115 / hour</span>
+					</div>
+					<p>Sodales mollis metus eget egestas. Duis sit amet sem pretium, facilisis libero ut, lobortis arcu. Cras ipsum libero, suscipit ut nisl vitae, commodo pretium mauris.</p>
+				</div>
+				</a>
+				<div class="clearfix"></div>
+			</li>
+		</ul>
+		<div class="clearfix"></div>
+
+		<div class="pagination-container">
+			<nav class="pagination">
+				<ul>
+					<li><a href="#" class="current-page">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li class="blank">...</li>
+					<li><a href="#">22</a></li>
+				</ul>
+			</nav>
+
+			<nav class="pagination-next-prev">
+				<ul>
+					<li><a href="#" class="prev">Previous</a></li>
+					<li><a href="#" class="next">Next</a></li>
+				</ul>
+			</nav>
+		</div>
+
+	</div>
+	</div>
+  <br><br>
+
+
+</div>
+
+<!-- Back To Top Button -->
+<div id="backtotop"><a href="#"></a></div>
+
+</div>
+<!-- Wrapper / End -->
+
+
+
+
+
+</body>
+<footer style="background-color: rgb(131, 0, 0);color: white;" class=" body-font">
+  <div class="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+    <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+      <a class="flex title-font font-medium items-center md:justify-start justify-center ">
+        <img style="height:50px ; width:50px ;" src="images/favicon.jpg" alt="">
+        <span class="ml-3 text-xl">DHA Suffa University</span>
+      </a>
+      <p class="mt-2 text-sm ">Career Services and Corporate Relations Office</p>
+    </div>
+    <div class="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 md:text-left text-center">
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium  tracking-widest text-sm mb-3 text-gray-200">Resources</h2>
+          <li>
+            <a href="resources/dsu-2018-internship-application-form.pdf" class="hover:text-gray-800">Internship application form</a>
+          </li>
+          <li>
+            <a href="resources/Internship-Report-Draft.docx" class="hover:text-gray-800">Internship Report Draft</a>
+          </li>
+          <li>
+            <a href="resources/Student-Evaluation-Regarding-Internship.pdf" class="hover:text-gray-800">Student Evaluation</a>
+          </li>
+          <li>
+            <a href="resources/Supervisor-Evaluation-form.docx" class="hover:text-gray-800">Supervisor Evaluation</a>
+          </li>
+          <li>
+            <a href="resources/Template-CV.doc" class="hover:text-gray-800">CV Template <a href="https://www.example.com" class="hover:text-gray-800">First Link</a></a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium  tracking-widest text-sm mb-3"></h2>
+        <nav class="list-none mb-10 mt-10">
+          <li>
+            <a href="index.html" class="hover:text-gray-800">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="hover:text-gray-800">About Us</a>
+          </li>
+          <li>
+            <a href="services.html" class="hover:text-gray-800">Services</a>
+          </li>
+          <li>
+            <a href="resources.html" class="hover:text-gray-800">Resources</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium  tracking-widest text-sm mb-3"></h2>
+        <nav class="list-none mb-10 mt-10">
+          <li>
+            <a href="contact.html" class="hover:text-gray-800">Contact Us</a>
+          </li>
+          <li>
+            <a href="form.html" class="hover:text-gray-800">Login</a>
+          </li>
+          <li>
+            <a href="job.html" class="hover:text-gray-800">Job Portal</a>
+          </li>
+        </nav>
+      </div>
+      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+        <h2 class="title-font font-medium tracking-widest text-sm mb-3 text-gray-200">Get in touch with us</h2>
+        <nav class="list-none mb-10">
+            <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <a href="#map-location" class="hover:text-gray-800">DHA Suffa University, DHA Phase 7 Ext, Karachi</a>
+            </li>
+            <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+1234567890" class="hover:text-gray-800">(021)35244851 Ext:180</a>
+            </li>
+            <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@example.com" class="hover:text-gray-800">cscr@dsu.edu.pk</a>
+            </li>
+        </nav>
+    </div>
+    
+    </div>
+  </div>
+  <div style="background-color: rgb(53, 0, 0);color: white;">
+    <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+      <p class=" text-sm text-center sm:text-left">© Copyright - DHA Suffa University -
+        <a  rel="noopener noreferrer" class=" ml-1" target="_blank">Website by Fahad-Ibtisam-Ibad</a>
+      </p>
+      <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+      </span>
+    </div>
+  </div>
+</footer>
+</html>

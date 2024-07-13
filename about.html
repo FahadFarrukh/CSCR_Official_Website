@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>CSCR DHA Suffa University</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo2.png" />
+    <style>
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #790000;
+        color: #fff;
+        padding-top: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+
+        display: none;
+        border: none;
+        border-radius: 4px;
+      }
+      .social-btn1:hover {
+        color: #560000;
+      }
+
+      /* Style for the arrow icon */
+      .scroll-to-top::before {
+        content: "\2191"; /* Unicode arrow-up character */
+        font-size: 20px;
+      }
+      #abc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .divider {
+        width: 95%;
+        margin: 20px auto;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #6c0000,
+          transparent
+        );
+      }
+
+      /* NAVBAR STYLING STARTS */
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #640000ff;
+        color: #fff;
+      }
+
+      .nav-links a {
+        color: #fff;
+      }
+
+      /* LOGO */
+      .logo {
+        font-size: 26px;
+        color: #ffffff;
+      }
+
+      /* NAVBAR MENU */
+      .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+      }
+
+      .menu li:hover {
+        background-color: #4b0000;
+        border-radius: 5px;
+        transition: 0.3s ease;
+      }
+
+      .menu li {
+        padding: 5px 14px;
+      }
+
+      /* DROPDOWN MENU */
+      .services {
+        position: relative;
+      }
+
+      .dropdown {
+        background-color: rgb(1, 139, 139);
+        padding: 1em 0;
+        position: absolute; /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+      }
+
+      .dropdown li + li {
+        margin-top: 10px;
+      }
+
+      .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+      }
+
+      .dropdown li:hover {
+        background-color: #4c9e9e;
+      }
+
+      .services:hover .dropdown {
+        display: block;
+      }
+
+      /* RESPONSIVE NAVBAR MENU STARTS */
+
+      /* CHECKBOX HACK */
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      /* HAMBURGER MENU */
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+      }
+
+      /* APPLYING MEDIA QUERIES */
+      @media (max-width: 768px) {
+        .menu {
+          display: none;
+          position: absolute;
+          background-color: #640000ff;
+          right: 0;
+          left: 0;
+          margin-top: 20px;
+          text-align: center;
+          padding: 16px 0;
+        }
+
+        .menu li:hover {
+          display: inline-block;
+          background-color: #4d0000;
+          transition: 0.3s ease;
+        }
+
+        .menu li + li {
+          margin-top: 12px;
+        }
+
+        input[type="checkbox"]:checked ~ .menu {
+          display: block;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .dropdown {
+          left: 50%;
+          top: 30px;
+          transform: translateX(35%);
+        }
+
+        .dropdown li:hover {
+          background-color: #4c9e9e;
+        }
+      }
+      .btn-secondary {
+        background-color: #800000; /* Maroon background */
+        border-color: #a10000; /* Maroon border */
+        color: #ffffff; /* White text */
+      }
+      @media (max-width: 1168px) {
+        .logo {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav style="z-index: 999" class="navbar">
+      <!-- LOGO -->
+      <div
+        style="display: flex; align-items: center; z-index: 999"
+        class="logo"
+      >
+        <div>
+          <img
+            style="height: 90px; width: 90px"
+            src="images/logo2.png"
+            alt=""
+          />
+        </div>
+        <h1 style="color: white; font-weight: 700; font-size: 26">
+          DHA Suffa University
+        </h1>
+      </div>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input style="z-index: 999" type="checkbox" id="checkbox_toggle" />
+        <label style="z-index: 999" for="checkbox_toggle" class="hamburger"
+          >&#9776;</label
+        >
+
+        <!-- NAVIGATION MENUS -->
+        <div style="z-index: 999" class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careerfair.html">Career Fair</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </div>
+      </ul>
+    </nav>
+
+    <section class="text-gray-600 body-font">
+      <div class="container-fluid py-5 my-5">
+        <div class="container pt-5">
+          <div class="row g-5">
+            <div
+              class="col-lg-5 col-md-6 col-sm-12 wow fadeIn"
+              data-wow-delay=".3s"
+            >
+              <div class="h-100 position-relative">
+                <img
+                  src="images/about_us_image.jpg"
+                  class="img-fluid w-75 rounded"
+                  alt=""
+                  style="margin-bottom: 25%"
+                />
+                <div class="position-absolute w-75" style="top: 25%; left: 25%">
+                  <img
+                    src="images/about_us_image.jpg"
+                    class="img-fluid w-100 rounded"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-lg-7 col-md-6 col-sm-12 wow fadeIn"
+              data-wow-delay=".5s"
+            >
+              <h2
+                style="
+                  font-size: 37px;
+                  color: #bb0000;
+                  font-weight: 500;
+                  margin-bottom: 5px;
+                "
+              >
+                About Us
+              </h2>
+              <h1 style="font-size: 35px; font-weight: 500" class="mb-4">
+                Our Mission at CSCR DSU
+              </h1>
+              <p style="line-height: 30px" class="mb-1">
+                At DHA Suffa University's Career Services and Corporate
+                Relations Office, we are committed to bridging the gap between
+                academic excellence and professional success. Our dedicated team
+                empowers students with the tools, skills, and opportunities to
+                thrive in competitive global markets. We foster robust
+                partnerships with industry leaders to ensure our graduates are
+                the preferred choice for employers.
+              </p>
+              <p style="line-height: 30px">
+                Through personalized counseling, targeted workshops, and
+                strategic networking events, we unlock each student's potential.
+                Join us and chart a course to a future filled with achievements
+                and meaningful career milestones.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin-bottom: 50px" id="abc"><div class="divider"></div></div>
+
+    <footer
+      style="background-color: rgb(131, 0, 0); color: white"
+      class="body-font"
+    >
+      <div style="background-color: rgb(122, 0, 0); color: white">
+        <div
+          class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-sm text-center sm:text-left">
+            © 2024 —
+            <a
+              rel="noopener noreferrer"
+              class="ml-1 social-btn1"
+              target="_blank"
+              >@DHA Suffa University</a
+            >
+          </p>
+          <span
+            class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+          >
+            <a
+              class="social-btn1"
+              href="https://www.facebook.com/dha.suffa?mibextid=YMEMSu"
+            >
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+
+            <a
+              class="ml-3 social-btn1"
+              href="https://www.instagram.com/dsu_official?igsh=MWdja2Z5amVqemJ1NA=="
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="ml-3 social-btn1"
+              href="https://www.linkedin.com/school/dha-suffa-university/"
+            >
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>CSCR DHA Suffa University</title>
+    <link rel="icon" type="image/x-icon" href="/images/logo2.png" />
+
+    <style>
+      .scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #790000;
+        color: #fff;
+        padding-top: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 8px;
+
+        display: none;
+        border: none;
+        border-radius: 4px;
+      }
+
+      /* Style for the arrow icon */
+      .scroll-to-top::before {
+        content: "\2191"; /* Unicode arrow-up character */
+        font-size: 20px;
+      }
+      #abc {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .divider {
+        width: 95%;
+        margin: 20px auto;
+        height: 4px;
+        background: linear-gradient(
+          to right,
+          transparent,
+          #6c0000,
+          transparent
+        );
+      }
+
+      /* NAVBAR STYLING STARTS */
+      .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        background-color: #640000ff;
+        color: #fff;
+      }
+
+      .nav-links a {
+        color: #fff;
+      }
+
+      /* LOGO */
+      .logo {
+        font-size: 26px;
+        color: #ffffff;
+      }
+
+      /* NAVBAR MENU */
+      .menu {
+        display: flex;
+        gap: 1em;
+        font-size: 18px;
+      }
+
+      .menu li:hover {
+        background-color: #4b0000;
+        border-radius: 5px;
+        transition: 0.3s ease;
+      }
+
+      .menu li {
+        padding: 5px 14px;
+      }
+
+      /* DROPDOWN MENU */
+      .services {
+        position: relative;
+      }
+
+      .dropdown {
+        background-color: rgb(1, 139, 139);
+        padding: 1em 0;
+        position: absolute; /*WITH RESPECT TO PARENT*/
+        display: none;
+        border-radius: 8px;
+        top: 35px;
+      }
+
+      .dropdown li + li {
+        margin-top: 10px;
+      }
+
+      .dropdown li {
+        padding: 0.5em 1em;
+        width: 8em;
+        text-align: center;
+      }
+
+      .dropdown li:hover {
+        background-color: #4c9e9e;
+      }
+
+      .services:hover .dropdown {
+        display: block;
+      }
+
+      /* RESPONSIVE NAVBAR MENU STARTS */
+
+      /* CHECKBOX HACK */
+
+      input[type="checkbox"] {
+        display: none;
+      }
+
+      /* HAMBURGER MENU */
+      .hamburger {
+        display: none;
+        font-size: 24px;
+        user-select: none;
+      }
+
+      /* APPLYING MEDIA QUERIES */
+      @media (max-width: 768px) {
+        .menu {
+          display: none;
+          position: absolute;
+          background-color: #640000ff;
+          right: 0;
+          left: 0;
+          margin-top: 20px;
+          text-align: center;
+          padding: 16px 0;
+        }
+
+        .menu li:hover {
+          display: inline-block;
+          background-color: #4d0000;
+          transition: 0.3s ease;
+        }
+
+        .menu li + li {
+          margin-top: 12px;
+        }
+
+        input[type="checkbox"]:checked ~ .menu {
+          display: block;
+        }
+
+        .hamburger {
+          display: block;
+        }
+
+        .dropdown {
+          left: 50%;
+          top: 30px;
+          transform: translateX(35%);
+        }
+
+        .dropdown li:hover {
+          background-color: #4c9e9e;
+        }
+      }
+      .btn-secondary {
+        background-color: #800000; /* Maroon background */
+        border-color: #a10000; /* Maroon border */
+        color: #ffffff; /* White text */
+      }
+
+      @media (max-width: 1168px) {
+        .logo {
+          font-size: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .logo {
+          font-size: 20px;
+        }
+        .career-side-image {
+          display: none;
+        }
+        .career-heading {
+          color: black;
+          margin-top: -10%;
+        }
+
+        .career-mobile {
+          margin-top: -15%;
+          margin-bottom: -18%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 600px;
+        }
+        .sec1-career {
+          margin-top: -10%;
+        }
+      }
+
+      @media (max-width: 1268px) {
+        .career-side-image {
+          display: none;
+        }
+        .career-heading {
+          color: black;
+          margin-top: 10%;
+          margin-left: 0%;
+        }
+        .career-mobile {
+          margin-top: -18%;
+          margin-bottom: -18%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 450px;
+        }
+      }
+
+      @media (min-width: 1468px) {
+        .career-mobile {
+          margin-right: -5%;
+          margin-top: -8%;
+        }
+        .career-mobile img {
+          height: 750px;
+        }
+        .career-side-image {
+        }
+        .career-para {
+          margin-top: 2%;
+          width: 80%;
+        }
+        .career-heading {
+          margin-top: 3%;
+          margin-left: -5.5%;
+          margin-right: 1%;
+        }
+      }
+
+      @media (min-width: 1400px) and (max-width: 1468px) {
+        .career-heading {
+          margin-left: 0%;
+          margin-top: 2%;
+        }
+        .career-para {
+          width: 430px;
+        }
+        .career-mobile {
+          margin-top: -7%;
+          margin-right: -5%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 570px;
+        }
+      }
+      @media (min-width: 1536px) and (max-width: 1868px) {
+        .career-heading {
+          margin-left: 6%;
+          margin-top: 2.5%;
+        }
+        .career-para {
+          width: 430px;
+        }
+        .career-mobile {
+          margin-top: -4%;
+          margin-right: 3%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 570px;
+        }
+      }
+
+      @media (min-width: 1300px) and (max-width: 1400px) {
+        .career-heading {
+          margin-left: 2%;
+          margin-top: -2%;
+        }
+        .career-para {
+          width: 430px;
+        }
+        .career-mobile {
+          margin-top: -7%;
+          margin-right: -5%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 570px;
+        }
+      }
+
+      @media (min-width: 1269px) and (max-width: 1280px) {
+        .career-heading {
+          margin-left: -8%;
+          margin-top: 2%;
+        }
+        .career-para {
+          width: 430px;
+        }
+        .career-mobile {
+          margin-top: -10%;
+          margin-right: -10%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 500px;
+        }
+      }
+
+      @media (min-width: 1280px) and (max-width: 1300px) {
+        .career-heading {
+          margin-left: 3%;
+          margin-top: 5%;
+        }
+        .career-para {
+          width: 430px;
+        }
+        .career-mobile {
+          margin-top: -8%;
+          margin-right: 2%;
+        }
+        .career-mobile img {
+          height: 20%;
+          width: 500px;
+        }
+      }
+
+      .social-btn1:hover {
+        color: #560000;
+      }
+    </style>
+  </head>
+  <body>
+    <nav style="z-index: 999" class="navbar">
+      <!-- LOGO -->
+      <div
+        style="display: flex; align-items: center; z-index: 999"
+        class="logo"
+      >
+        <div>
+          <img
+            style="height: 90px; width: 90px"
+            src="images/logo2.png"
+            alt=""
+          />
+        </div>
+        <h1 style="color: white; font-weight: 700; font-size: 26">
+          DHA Suffa University
+        </h1>
+      </div>
+
+      <!-- NAVIGATION MENU -->
+      <ul class="nav-links">
+        <!-- USING CHECKBOX HACK -->
+        <input style="z-index: 999" type="checkbox" id="checkbox_toggle" />
+        <label style="z-index: 999" for="checkbox_toggle" class="hamburger"
+          >&#9776;</label
+        >
+
+        <!-- NAVIGATION MENUS -->
+        <div style="z-index: 999" class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="careerfair.html">Career Fair</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="resources.html">Resources</a></li>
+
+          <li><a href="contact.html">Contact Us</a></li>
+        </div>
+      </ul>
+    </nav>
+    <section style="color: #ffffff" class="relative body-font sec1-career">
+      <div class="absolute career-side-image" style="z-index: -1">
+        <img src="images/ll3.png" alt="" />
+      </div>
+      <div
+        class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center"
+      >
+        <div
+          class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center career-heading"
+        >
+          <h1 class="title-font sm:text-3xl text-3xl mb-4 font-medium">
+            DSU Career Fair 2025 Coming Soon
+          </h1>
+          <p class="mb-8 leading-relaxed career-para">
+            Seize the chance to explore numerous career possibilities at the
+            upcoming fair, featuring over 50 diverse companies. This event
+            promises valuable connections, internship and job opportunities, and
+            a platform to shape your professional journey. Don't miss out on the
+            potential doors that could open for you!
+          </p>
+          <!-- <div style="margin-top: -1%" class="flex justify-center">
+            <a
+              href="https://docs.google.com/forms/d/1MLoFDM7mKCw_chMYoct0KvEgQvCpeQJtFgSZVbi2720/edit?ts=657c20da#responses"
+              ><button
+                class="inline-flex text-white bg-red-700 border-0 py-3 px-6 focus:outline-none hover:bg-red-800 rounded text-lg"
+              >
+                Register Now
+              </button></a
+            >
+          </div> -->
+        </div>
+        <div class="career-mobile">
+          <img class="" alt="hero" src="images/career5.png" />
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto flex flex-wrap">
+        <div class="lg:w-1/2 w-full mb-10 lg:mb-0 rounded-lg overflow-hidden">
+          <img
+            alt="feature"
+            class="object-cover object-center h-full w-full"
+            src="images/career.jpg"
+          />
+        </div>
+        <div
+          class="flex flex-col flex-wrap lg:py-6 -mb-10 lg:w-1/2 lg:pl-12 lg:text-left text-center"
+        >
+          <div class="flex flex-col mb-10 lg:items-start items-center mt-8">
+            <div
+              class="w-16 h-16 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-500 mb-5"
+            >
+              <div style="padding: 15px">
+                <img src="images/calendar.png" alt="" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Date & Time
+              </h2>
+              <p class="leading-relaxed text-base">
+                The date for DSU Career Fair 2024 is 24th January 2024 and its
+                timings will be from 10:00 AM to 11:00 AM .
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col mb-10 lg:items-start items-center mt-8">
+            <div
+              class="w-16 h-16 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-500 mb-5"
+            >
+              <div style="padding: 10px">
+                <img src="images/location.png" alt="" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Location
+              </h2>
+              <p class="leading-relaxed text-base">
+                DSU Career Fair 2024 will be held at Executive Lecture Theatre.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col mb-10 lg:items-start items-center mt-8">
+            <div
+              class="w-16 h-16 inline-flex items-center justify-center rounded-full bg-gray-300 text-indigo-500 mb-5"
+            >
+              <div style="padding: 12px">
+                <img src="images/opportunity.png" alt="" />
+              </div>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-gray-900 text-lg title-font font-medium mb-3">
+                Opportunities
+              </h2>
+              <p class="leading-relaxed text-base">
+                Discover diverse career opportunities at our upcoming fair with
+                50+ companies. Gain valuable connections, explore internships,
+                and find potential job openings. Don't miss out!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h1
+            class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900"
+          >
+            Organizations Participated
+          </h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+            Explore a multitude of career possibilities by connecting with over
+            50 companies at our upcoming career fair, where you can delve into a
+            diverse range of professional opportunities and find the perfect fit
+            for your aspirations.
+          </p>
+        </div>
+        <div class="flex flex-wrap -m-2">
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0071.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Quality Punch
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0047.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Human Capital HR Solutions
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0070.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Fulcrum</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/jbs.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Jaffer Business Systems
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/Bank_Islami.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Bank Islami
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/ptm.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Premium Textile Mills
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0054.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Monsalwa (Quick Foods Ltd.)
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/geeks.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Geeks of Kolachi
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/karwan-e-hayat.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Karwan e Hayat
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/arthur.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Arthur Lawrence
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/polani.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Polani Textile
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0045.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Cybernet</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/indus_hospital.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Indus hospital
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0069.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Logixos</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0068.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Skylink Distribution
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/aiesec.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">AIESEC</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/cubix.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Cubixlab</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0049.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  iSEO Ranker
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/centegy.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Centegy Technologies Pvt Ltd
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0065.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  ICMA International
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/nagaria.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Nagaria Textile Mills (Pvt) Ltd
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0064.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Vicpak Educational Consultancy
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0059.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Quality Vertex Integrated System Engineering Pvt Ltd
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/techo.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  TechoMAtrix
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0060.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  SK Shipping Lines
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/bitrupt.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Bitrupt</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0018.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  TALENT EXPERTZ- HR SOLUTIONS
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/neo.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Niobiotics</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/karsaz.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Karsaz</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0020.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  360 digital eyes
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0019.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">ICM Japan</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/lucky.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Lucky Textile Mills
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0015.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">IDP</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0017.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">PEF</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0016.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  QBS CO Pvt Ltd
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0024.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Hilal Group of Companies
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0025.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">HR Link</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0026.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  M.I Industries
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0027.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Cognitive Technologies pvt Ltd
+                </h2>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/contour.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Contour Software
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/avanza.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Avanza Solutions
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/vrtousoft.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Virtuosoft</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0031.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Vectra Com</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/cdc.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">CDC</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/ssgc.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  SSGC (IT Dept)
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/asani.png"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Asani.io</h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0037.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">
+                  Tech20Four Pvt Ltd
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="p-2 lg:w-1/3 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border-gray-200 border p-4 rounded-lg"
+            >
+              <img
+                alt="team"
+                class="w-16 h-16 bg-gray-100 object-cover object-center flex-shrink-0 rounded-full mr-4"
+                src="images/IMG-20240119-WA0035.jpg"
+              />
+              <div class="flex-grow">
+                <h2 class="text-gray-900 title-font font-medium">Compass DX</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin-bottom: 50px" id="abc"><div class="divider"></div></div>
+
+    <footer
+      style="background-color: rgb(131, 0, 0); color: white"
+      class="body-font"
+    >
+      <div style="background-color: rgb(122, 0, 0); color: white">
+        <div
+          class="container mx-auto py-8 px-5 flex flex-wrap flex-col sm:flex-row"
+        >
+          <p class="text-sm text-center sm:text-left">
+            © 2024 —
+            <a
+              rel="noopener noreferrer"
+              class="ml-1 social-btn1"
+              target="_blank"
+              >@DHA Suffa University</a
+            >
+          </p>
+          <span
+            class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"
+          >
+            <a
+              class="social-btn1"
+              href="https://www.facebook.com/dha.suffa?mibextid=YMEMSu"
+            >
+              <svg
+                fill="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                ></path>
+              </svg>
+            </a>
+
+            <a
+              class="ml-3 social-btn1"
+              href="https://www.instagram.com/dsu_official?igsh=MWdja2Z5amVqemJ1NA=="
+            >
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                ></path>
+              </svg>
+            </a>
+            <a
+              class="ml-3 social-btn1"
+              href="https://www.linkedin.com/school/dha-suffa-university/"
+            >
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="0"
+                class="w-5 h-5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

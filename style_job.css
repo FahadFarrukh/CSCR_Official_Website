@@ -1,0 +1,241 @@
+.container1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-size: 20px;
+}
+.input{
+color: black;
+padding-top: 10px;
+padding-bottom: 10px;
+padding-left: 15px;
+padding-right: 15px;
+}
+option{
+  color: black;
+}
+.input,select{
+  color: rgb(255, 255, 255);
+  padding: 15px;
+}
+:root {
+  --arrow-bg: rgba(255, 255, 255, 0.3);
+  --arrow-icon: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  --option-bg: white;
+  --select-bg: rgba(255, 255, 255, 0.2);
+}
+
+* {
+  box-sizing: border-box;
+}
+.input{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background:   rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  
+}
+
+/* <select> styles */
+select {
+  /* Reset */
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20rem;
+  padding: 1rem 4rem 1rem 1rem;
+  background: var(--arrow-icon) no-repeat right 0.8em center/1.4em, linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
+  color: white;
+  border-radius: 0.25em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  /* Remove IE arrow */
+  /* Remove focus outline */
+  /* <option> colors */
+}
+select::-ms-expand {
+  display: none;
+}
+select:focus {
+  outline: none;
+}
+select option {
+  color: inherit;
+  background-color: var(--option-bg);
+}
+.form-field{
+margin: 1%;
+}
+@media (max-width: 1468px) {
+
+  .container1{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 20px;
+    margin-left: 5%;
+  }
+
+  .form-field{
+    margin-top: 8%;
+  }
+  #hhh{
+    display: block;
+   
+  }
+  .input{
+    color: black;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 90%;
+    }
+    select{
+      width: 90%;
+    }
+  option{
+    background-color: gray;
+    color: black;
+  }
+  }
+  #hhh input::placeholder {
+    color: white;
+  }
+  .form-field select option {
+    background-color: rgba(128, 128, 128, 0.642); /* Set the background color for the options */
+  }
+
+
+  .job-cards1{
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+.cards1{
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+ justify-content: space-between;
+margin-top: 30px;
+  background-color: rgb(233, 233, 233);
+padding-left: 6%;
+padding-top: 3%;
+padding-right: 6%;
+padding-bottom: 3%;
+}
+.img1{
+  margin-left: 1%;
+  height: 100px;
+  width: 100px;
+  float: left;
+}
+.job-heading1{
+  margin-left: 4%;
+  float: left;
+}
+.job-heading2{
+ font-weight: 600;
+ font-size: 21px;
+}
+.job-heading3{
+ 
+  font-size: 18px;
+  margin-top: 5px;
+}
+
+.location1{
+ 
+  float: right;
+  font-size: 18px;
+}
+.job-status-full{
+
+  font-size: 18px;
+width:100px;
+  background-color: rgba(0, 176, 0, 0.577);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
+  margin-left: 4%;
+}
+.job-status-part{
+
+  font-size: 18px;
+width:100px;
+  background-color: rgba(176, 0, 0, 0.577);
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 10px;
+  margin-left: 4%;
+}
+
+.location-image{
+  width: 20px;
+  
+}
+.div2{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.locate{
+  display: flex;
+  width: 180px;
+}
+.div1{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.location1{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 668px) {
+
+  .cards1{
+    display: block;
+    align-items: center;
+    border-radius: 15px;
+
+    background-color: rgb(233, 233, 233);
+    padding-left: 3%;
+    padding-top: 6%;
+    padding-right: 3%;
+    padding-bottom: 6%;
+  }
+
+
+  .div2{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
