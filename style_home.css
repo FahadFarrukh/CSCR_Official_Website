@@ -126,6 +126,7 @@
         height: 100%;
         object-fit: cover;
     }
+    
 }
 
 .page-header {
@@ -370,6 +371,7 @@
         height: 45px;
         font-size: 20px;
     }
+    
 }
 
 
@@ -507,6 +509,7 @@
         height: 45px;
         font-size: 20px;
     }
+    
 }
 
 
@@ -772,7 +775,10 @@ input[type=checkbox] {
     margin-top: 28px;
     text-align: center;
     padding: 16px 0;
+    height: 382px;
     border-bottom: solid 4px white;
+    outline: solid 4px #640000ff;
+  
   }
 
   .menu li:hover {
@@ -786,7 +792,7 @@ input[type=checkbox] {
     
   }
   
-
+ 
 
   input[type=checkbox]:checked ~ .menu {
     display: block;
@@ -805,6 +811,7 @@ input[type=checkbox] {
   .dropdown li:hover {
     background-color: #4c9e9e;
   }
+
 }
 
 
@@ -833,6 +840,9 @@ justify-content: space-evenly;
 .social-button{
   width: 80%;
 
+}
+.AlumniConnect{
+    margin-top: 10px;
 }
 .para{
   margin-left: 4%;
@@ -887,7 +897,7 @@ h2{
     margin-right: -4%;
 }
 #contact{
-  margin-top: -5%;
+  margin-top: -8%;
   display: flex;
   margin-left: 10%;
   font-size: 38px;
